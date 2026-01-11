@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>AT’Import Export</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #111;
+}
+header {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1529070538774-1843cb3265df") center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
+header h1 { color: #d4af37; font-size: 3em; margin: 0; }
+header p { font-size: 1.2em; }
+nav {
+    background: #222;
+    text-align: center;
+    padding: 15px;
+}
+nav a, .lang-btn {
+    color: #d4af37;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+section {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    color: #111;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+h2 { color: #d4af37; }
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    background: #d4af37;
+    color: black;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+footer {
+    background: #222;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Slider */
+.slider {
+    max-width: 1000px;
+    margin: 30px auto;
+    position: relative;
+}
+.slides {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AT’Import Export</h1>
+    <p id="subtitle">Votre partenaire en commerce international</p>
+    <div>
+        <span class="lang-btn" onclick="setLang('fr')">FR</span> |
+        <span class="lang-btn" onclick="setLang('en')">EN</span>
+    </div>
+</header>
+
+<nav>
+    <a href="#about" id="navAbout">À propos</a>
+    <a href="#services" id="navServices">Services</a>
+    <a href="#products" id="navProducts">Produits</a>
+    <a href="#contact" id="navContact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2 id="aboutTitle">À propos</h2>
+    <p id="aboutText">
+        AT’Import Export est spécialisée dans l’exportation de produits divers
+        et l’importation de marchandises à l’international.
+    </p>
+</section>
+
+<section id="services">
+    <h2 id="servicesTitle">Nos services</h2>
+    <ul id="servicesList">
+        <li>Exportation de produits divers</li>
+        <li>Importation de marchandises</li>
+        <li>Logistique et transit</li>
+        <li>Conseil en commerce international</li>
+    </ul>
+</section>
+
+<section id="products">
+    <h2 id="productsTitle">Produits exportés</h2>
+    
+    <!-- Slider d’images -->
+    <div class="slider">
+        <img class="slides" src="https://images.unsplash.com/photo-1580910051074-cdcfe8625f10" alt="Produit 1">
+        <img class="slides" src="https://images.unsplash.com/photo-1580910077885-3e7b5a4b0e8c" alt="Produit 2">
+        <img class="slides" src="https://images.unsplash.com/photo-1580910066331-ef6e6b6d0bbf" alt="Produit 3">
+    </div>
+
+    <ul id="productsList">
+        <li>Produits agricoles</li>
+        <li>Produits alimentaires</li>
+        <li>Matières premières</li>
+        <li>Produits artisanaux</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2 id="contactTitle">Contact</h2>
+    <form action="https://formsubmit.co/Atimportexport@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Nom / Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit" id="sendBtn">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 AT’Import Export</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/212625548746">WhatsApp</a>
+
+<script>
+/* Langues FR / EN */
+const content = {
+fr: {
+subtitle: "Votre partenaire en commerce international",
+navAbout: "À propos",
+navServices: "Services",
+navProducts: "Produits",
+navContact: "Contact",
+aboutTitle: "À propos",
+aboutText: "AT’Import Export est spécialisée dans l’exportation de produits divers et l’importation de marchandises à l’international.",
+servicesTitle: "Nos services",
+productsTitle: "Produits exportés",
+contactTitle: "Contact",
+sendBtn: "Envoyer"
+},
+en: {
+subtitle: "Your partner in international trade",
+navAbout: "About",
+navServices: "Services",
+navProducts: "Products",
+navContact: "Contact",
+aboutTitle: "About us",
+aboutText: "AT’Import Export specializes in exporting various products and importing goods worldwide.",
+servicesTitle: "Our services",
+productsTitle: "Exported products",
+contactTitle: "Contact",
+sendBtn: "Send message"
+}
+};
+
+function setLang(lang) {
+for (let id in content[lang]) {
+document.getElementById(id).innerText = content[lang][id];
+}
+}
+
+/* Slider automatique */
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Changement toutes les 3 sec
+}
+</script>
+
+</body>
+</html>
